@@ -15,7 +15,7 @@ func TestGetItems(t *testing.T) {
 	getItems(res, req)
 
 	// Log the response status code
-	log.Printf("TestGetItems - Response Status Code: %d\n", res.Code)
+	t.Logf("TestGetItems - Response Status Code: %d\n", res.Code)
 
 	if res.Code != http.StatusOK {
 		t.Errorf("Expected status OK, got %v", res.Code)
@@ -30,7 +30,7 @@ func TestCreateItem(t *testing.T) {
 	createItem(res, req)
 
 	// Log the response status code
-	log.Printf("TestCreateItem - Response Status Code: %d\n", res.Code)
+	t.Logf("TestCreateItem - Response Status Code: %d\n", res.Code)
 
 	// Log the response body (optional)
 	log.Printf("TestCreateItem - Response Body: %s\n", res.Body.String())
