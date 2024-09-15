@@ -39,3 +39,16 @@ func TestCreateItem(t *testing.T) {
 		t.Errorf("Expected status Created, got %v", res.Code)
 	}
 }
+
+func TestGetItemsFail(t *testing.T) {
+	req, _ := http.NewRequest("GET", "/items", nil)
+	res := httptest.NewRecorder()
+	getItems(res, req)
+
+	t.Logf("TestGetItemsFail - Response Status Code: %d\n", res.Code)
+
+	// Force a failure
+	if res.Code == http.StatusOK {
+		t.Errorf("Forced failure - Expected a different status code, got %v", res.Code)
+	}
+}
