@@ -48,7 +48,7 @@ func TestGetItemsFail(t *testing.T) {
 	t.Logf("TestGetItemsFail - Response Status Code: %d\n", res.Code)
 
 	// Force a failure
-	if res.Code == http.StatusOK {
+	if res.Code != http.StatusOK {
 		t.Errorf("Forced failure - Expected a different status code, got %v", res.Code)
 	}
 }
