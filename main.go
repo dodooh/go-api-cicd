@@ -35,5 +35,5 @@ func main() {
 	http.HandleFunc("/items", getItems)
 	http.HandleFunc("/items/create", createItem)
 	fmt.Println("Server listening on port 8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }
